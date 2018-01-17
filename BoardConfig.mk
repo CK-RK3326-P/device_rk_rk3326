@@ -38,7 +38,7 @@ PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3326/overlay
 # Disable emulator for "make dist" until there is a 64-bit qemu kernel
 BUILD_EMULATOR := false
 TARGET_BOARD_PLATFORM := rk3326
-TARGET_BOARD_PLATFORM_GPU := G6110
+TARGET_BOARD_PLATFORM_GPU := mali-tDVx
 BOARD_USE_DRM := true
 
 # RenderScript

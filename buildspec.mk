@@ -22,7 +22,7 @@
 ######################################################################
 
 TARGET_BOARD_PLATFORM ?= rk3326
-TARGET_BOARD_PLATFORM_GPU ?= G6110
+TARGET_BOARD_PLATFORM_GPU ?= mali-tDVx
 
 # Choose a product to build for.  Look in the products directory for ones
 # that work.
