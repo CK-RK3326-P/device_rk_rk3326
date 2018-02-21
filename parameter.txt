@@ -7,4 +7,5 @@ ATAG: 0x00200800
 MACHINE: 3326
 CHECK_MASK: 0x80
 PWR_HLD: 0,0,A,0,1
-CMDLINE: console=ttyFIQ0 androidboot.baseband=N/A androidboot.selinux=permissive androidboot.veritymode=/dev/block/platform/ff390000.dwmmc/by-name/metadata androidboot.hardware=rk30board androidboot.console=ttyFIQ0 init=/init initrd=0x62000000,0x00800000 mtdparts=rk29xxnand:0x00002000@0x00004000(uboot),0x00002000@0x00006000(trust),0x00002000@0x00008000(misc),0x00008000@0x0000a000(resource),0x00010000@0x00012000(kernel),0x00010000@0x00022000(boot),0x00020000@0x00032000(recovery),0x00038000@0x00052000(backup),0x00002000@0x0008a000(security),0x00100000@0x0008c000(cache),0x00400000@0x0018c000(system),0x00008000@0x0058c000(metadata),0x00100000@0x00594000(vendor),0x00100000@0x00696000(oem),0x00000400@0x00796000(frp),-@0x00796400(userdata)
+TYPE: GPT
+CMDLINE:mtdparts=rk29xxnand:0x00002000@0x00004000(uboot),0x00002000@0x00006000(trust),0x00002000@0x00008000(misc),0x00008000@0x0000a000(resource),0x00010000@0x00012000(kernel),0x00010000@0x00022000(boot),0x00020000@0x00032000(recovery),0x00038000@0x00052000(backup),0x00002000@0x0008a000(security),0x00100000@0x0008c000(cache),0x00400000@0x0018c000(system),0x00008000@0x0058c000(metadata),0x00080000@0x00594000(vendor),0x00080000@0x00614000(oem),0x00000400@0x00694000(frp),-@0x00696400(userdata:grow)
