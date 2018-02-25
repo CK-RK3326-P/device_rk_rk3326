@@ -43,9 +43,9 @@ export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 # source environment and chose target product
 DEVICE=`get_build_var TARGET_PRODUCT`
 BUILD_VARIANT=`get_build_var TARGET_BUILD_VARIANT`
-UBOOT_DEFCONFIG=rk3326h_defconfig
+UBOOT_DEFCONFIG=evb-px30
 KERNEL_DEFCONFIG=rockchip_defconfig
-KERNEL_DTS=rk3326-p9
+KERNEL_DTS=rk3326-863-lp3-v10
 PACK_TOOL_DIR=RKTools/linux/Linux_Pack_Firmware
 IMAGE_PATH=rockdev/Image-$TARGET_PRODUCT
 export PROJECT_TOP=`gettop`
@@ -61,7 +61,7 @@ export STUB_PATCH_PATH=$STUB_PATH/PATCHES
 
 # build uboot
 echo "start build uboot"
-cd u-boot && make distclean && make $UBOOT_DEFCONFIG && make ARCHV=aarch64 -j12 && cd -
+cd u-boot && make mrproper &&  make distclean && ./make.sh $UBOOT_DEFCONFIG && cd -
 if [ $? -eq 0 ]; then
     echo "Build uboot ok!"
 else
@@ -102,16 +102,6 @@ else
     exit 1
 fi
 
-# copy images to rockdev
-echo "copy u-boot images"
-cp u-boot/uboot.img $IMAGE_PATH/
-cp u-boot/RK3326MiniLoaderAll* $IMAGE_PATH/
-cp u-boot/trust.img $IMAGE_PATH/
-
-echo "copy kernel images"
-cp kernel/resource.img $IMAGE_PATH/
-cp kernel/kernel.img $IMAGE_PATH/
-
 if [ "$BUILD_OTA" = true ] ; then
     INTERNAL_OTA_PACKAGE_OBJ_TARGET=obj/PACKAGING/target_files_intermediates/$TARGET_PRODUCT-target_files-*.zip
     INTERNAL_OTA_PACKAGE_TARGET=$TARGET_PRODUCT-ota-*.zip
@@ -146,7 +136,7 @@ mkdir -p $STUB_PATH
 .repo/repo/repo forall  -c '[ "$REPO_REMOTE" = "rk" ] && { REMOTE_DIFF=`git log $REPO_REMOTE/$REPO_RREV..HEAD`; LOCAL_DIFF=`git diff`; [ -n "$REMOTE_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git format-patch $REPO_REMOTE/$REPO_RREV..HEAD -o $STUB_PATCH_PATH/$REPO_PATH; git merge-base HEAD $REPO_REMOTE/$REPO_RREV | xargs git show -s > $STUB_PATCH_PATH/$REPO_PATH/git-merge-base.txt; } || :; [ -n "$LOCAL_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git reset HEAD ./; git diff > $STUB_PATCH_PATH/$REPO_PATH/local_diff.patch; } || :; }'
 
 #Copy stubs
-cp manifest.xml $STUB_PATH/manifest_${DATE}.xml
+cp commit_id.xml $STUB_PATH/manifest_${DATE}.xml
 
 mkdir -p $STUB_PATCH_PATH/kernel
 cp kernel/.config $STUB_PATCH_PATH/kernel
