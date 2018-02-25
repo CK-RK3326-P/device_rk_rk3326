@@ -13,7 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+include device/rockchip/rk3326/rk3326_tablet/BoardConfig.mk
+$(call inherit-product, device/rockchip/rk3326/device-common.mk)
+$(call inherit-product, device/rockchip/common/device.mk)
 
-PRODUCT_MAKEFILES := \
-        $(LOCAL_DIR)/rk3326_evb/rk3326_evb.mk \
-        $(LOCAL_DIR)/rk3326_tablet/rk3326_tablet.mk
+PRODUCT_CHARACTERISTICS := tablet
+
+PRODUCT_NAME := rk3326_tablet
+PRODUCT_DEVICE := rk3326_tablet
+PRODUCT_BRAND := Android
+PRODUCT_MODEL := rk3326_tablet
+PRODUCT_MANUFACTURER := rockchip
+
+#
+## add Rockchip properties
+#
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=180

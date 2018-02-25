@@ -14,27 +14,19 @@
 # limitations under the License.
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-include device/rockchip/rk3326/BoardConfig.mk
-# Inherit from those products. Most specific first.
-$(call inherit-product, device/rockchip/rk3326/device.mk)
+include device/rockchip/rk3326/rk3326_evb/BoardConfig.mk
+$(call inherit-product, device/rockchip/rk3326/device-common.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
-PRODUCT_NAME := rk3326
-PRODUCT_DEVICE := rk3326
+PRODUCT_NAME := rk3326_evb
+PRODUCT_DEVICE := rk3326_evb
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := rk3326
+PRODUCT_MODEL := rk3326_evb
 PRODUCT_MANUFACTURER := rockchip
 
-PRODUCT_PACKAGES += \
-    SoundRecorder
-
-# Get the long list of APNs
-PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
-PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.version = 1.0.0 \
-    ro.product.ota.host = www.rockchip.com:2300
-
-PRODUCT_HAVE_OPTEE := true
+#
+##add Rockchip properties
+#
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=260

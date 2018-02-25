@@ -17,6 +17,7 @@
 PRODUCT_PACKAGES += \
     memtrack.$(TARGET_BOARD_PLATFORM) \
     WallpaperPicker \
+    SoundRecorder \
     Launcher3
 
 #$_rbox_$_modify_$_zhengyang: add displayd
@@ -24,7 +25,7 @@ PRODUCT_PACKAGES += \
     displayd \
     libion
 
-#enable this for support f2fs with data partion
+# enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # This ensures the needed build tools are available.
@@ -38,17 +39,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.rk30board.usb.rc:root/init.rk30board.usb.rc \
     $(LOCAL_PATH)/wake_lock_filter.xml:system/etc/wake_lock_filter.xml \
     device/rockchip/rk3326/package_performance.xml:$(TARGET_COPY_OUT_OEM)/etc/package_performance.xml \
-    device/rockchip/$(TARGET_BOARD_PLATFORM)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    $(TARGET_DEVICE_DIR)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
-
 $(call inherit-product-if-exists, vendor/rockchip/rk3326/device-vendor.mk)
 
-#for enable optee support
+# for enable optee support
 ifeq ($(strip $(PRODUCT_HAVE_OPTEE)),true)
-
 PRODUCT_COPY_FILES += \
        device/rockchip/common/init.optee_verify.rc:root/init.optee.rc
 endif
@@ -57,8 +56,51 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
                dalvik.vm.foreground-heap-growth-multiplier=2.0
 
+# Get the long list of APNs
+PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.version = 1.0.0 \
+    ro.product.ota.host = www.rockchip.com:2300
+
+PRODUCT_HAVE_OPTEE := true
+
 #
-#add Rockchip properties here
+## setup boot-shutdown animation configs.
+#
+HAVE_BOOT_ANIMATION := $(shell test -f $(TARGET_DEVICE_DIR)/bootanimation.zip && echo true)
+HAVE_SHUTDOWN_ANIMATION := $(shell test -f $(TARGET_DEVICE_DIR)/shutdownanimation.zip && echo true)
+
+ifeq ($(HAVE_BOOT_ANIMATION), true)
+PRODUCT_COPY_FILES += $(TARGET_DEVICE_DIR)/bootanimation.zip:$(TARGET_COPY_OUT_OEM)/media/bootanimation.zip
+endif
+
+ifeq ($(HAVE_SHUTDOWN_ANIMATION), true)
+PRODUCT_COPY_FILES += $(TARGET_DEVICE_DIR)/shutdownanimation.zip:$(TARGET_COPY_OUT_OEM)/media/shutdownanimation.zip
+endif
+
+#
+## setup oem-content configs.
+#
+HAVE_PRESET_CONTENT := $(shell test -d $(TARGET_DEVICE_DIR)/pre_set && echo true)
+HAVE_PRESET_DEL_CONTENT := $(shell test -d $(TARGET_DEVICE_DIR)/pre_set_del && echo true)
+
+ifeq ($(HAVE_PRESET_DEL_CONTENT), true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(TARGET_DEVICE_DIR)/pre_set_del,$(TARGET_COPY_OUT_OEM)/pre_set_del)
+
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.copy_oem=true
+endif
+
+ifeq ($(HAVE_PRESET_CONTENT), true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(TARGET_DEVICE_DIR)/pre_set,$(TARGET_COPY_OUT_OEM)/pre_set)
+
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.copy_oem=true
+endif
+
+#
+# add Rockchip properties here
 #
 PRODUCT_PROPERTY_OVERRIDES += \
                 ro.ril.ecclist=112,911 \
@@ -92,6 +134,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 wifi.supplicant_scan_interval=15 \
                 ro.factory.tool=0 \
                 ro.kernel.android.checkjni=0 \
-                ro.sf.lcd_density=240 \
                 ro.build.shutdown_timeout=0 \
                 persist.enable_task_snapshots=false
