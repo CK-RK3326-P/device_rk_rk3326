@@ -1,7 +1,7 @@
 on property:sys.boot_completed=1
-    chown system system /sys/class/devfreq/ffa30000.rogue-g6110/governor
-    chown system system /sys/class/devfreq/ffa30000.rogue-g6110/min_freq
-    chown system system /sys/class/devfreq/ffa30000.rogue-g6110/max_freq
+    chown system system /sys/class/devfreq/ff400000.gpu/governor
+    chown system system /sys/class/devfreq/ff400000.gpu/min_freq
+    chown system system /sys/class/devfreq/ff400000.gpu/max_freq
 
 on early-boot
     # Update dm-verity state and set partition.*.verified properties
@@ -23,6 +23,10 @@ on boot
     write /sys/kernel/debug/sched_features NO_ENERGY_AWARE
 
 on init
+    # Increased power consumption and CPU in exchange for memory
+    write /proc/sys/vm/swappiness 100
+    write /sys/block/zram0/comp_algorithm lz4
+
     # Load persistent dm-verity state
     verity_load_state
 
