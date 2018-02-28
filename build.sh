@@ -43,7 +43,7 @@ export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 # source environment and chose target product
 DEVICE=`get_build_var TARGET_PRODUCT`
 BUILD_VARIANT=`get_build_var TARGET_BUILD_VARIANT`
-UBOOT_DEFCONFIG=evb-px30
+UBOOT_DEFCONFIG=evb-rk3326
 KERNEL_DEFCONFIG=rockchip_defconfig
 KERNEL_DTS=rk3326-863-lp3-v10
 PACK_TOOL_DIR=RKTools/linux/Linux_Pack_Firmware
