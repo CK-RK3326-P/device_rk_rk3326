@@ -63,8 +63,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.version = 1.0.0 \
     ro.product.ota.host = www.rockchip.com:2300
 
-PRODUCT_HAVE_OPTEE := true
-
 #
 ## setup boot-shutdown animation configs.
 #
