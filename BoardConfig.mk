@@ -112,3 +112,7 @@ BUILD_WITH_GO_OPT := true
 
 # enable SVELTE malloc
 MALLOC_SVELTE := true
+
+#Config omx to support codec type.
+BOARD_SUPPORT_VP9 := false
+BOARD_SUPPORT_VP6 := false
