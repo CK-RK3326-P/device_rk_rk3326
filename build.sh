@@ -80,6 +80,8 @@ else
     exit 1
 fi
 
+echo "package resoure.img with charger images"
+cd u-boot && ./pack_resource.sh ../kernel/resource.img && cp resource.img ../kernel/resource.img && cd -
 
 # build android
 echo "start build android"
