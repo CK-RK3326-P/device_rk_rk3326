@@ -41,9 +41,6 @@ PRODUCT_COPY_FILES += \
     device/rockchip/rk3326/package_performance.xml:$(TARGET_COPY_OUT_OEM)/etc/package_performance.xml \
     $(TARGET_DEVICE_DIR)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
-# setup dalvik vm configs.
-$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
 $(call inherit-product-if-exists, vendor/rockchip/rk3326/device-vendor.mk)
 
 # for enable optee support
