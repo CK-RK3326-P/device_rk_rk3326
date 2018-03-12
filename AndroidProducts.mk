@@ -16,4 +16,4 @@
 
 PRODUCT_MAKEFILES := \
         $(LOCAL_DIR)/rk3326_evb/rk3326_evb.mk \
-        $(LOCAL_DIR)/rk3326_tablet/rk3326_tablet.mk
+        $(LOCAL_DIR)/rk3326_mid/rk3326_mid.mk
