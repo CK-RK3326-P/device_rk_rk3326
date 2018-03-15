@@ -50,6 +50,7 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a53
 TARGET_USES_64_BIT_BCMDHD := true
 TARGET_USES_64_BIT_BINDER := true
 
+TARGET_ROCKCHIP_PCBATEST := true
 # HACK: Build apps as 64b for volantis_64_only
 ifneq (,$(filter ro.zygote=zygote64, $(PRODUCT_DEFAULT_PROPERTY_OVERRIDES)))
 TARGET_PREFER_32_BIT_APPS :=
