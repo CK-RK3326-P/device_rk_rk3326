@@ -39,7 +39,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.rk30board.usb.rc:root/init.rk30board.usb.rc \
     $(LOCAL_PATH)/wake_lock_filter.xml:system/etc/wake_lock_filter.xml \
     device/rockchip/rk3326/package_performance.xml:$(TARGET_COPY_OUT_OEM)/etc/package_performance.xml \
-    $(TARGET_DEVICE_DIR)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    $(TARGET_DEVICE_DIR)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml\
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
 $(call inherit-product-if-exists, vendor/rockchip/rk3326/device-vendor.mk)
 
@@ -99,7 +102,7 @@ endif
 #
 PRODUCT_PROPERTY_OVERRIDES += \
                 ro.ril.ecclist=112,911 \
-                ro.opengles.version=196609 \
+                ro.opengles.version=196610 \
                 wifi.interface=wlan0 \
                 rild.libpath=/system/lib/libril-rk29-dataonly.so \
                 rild.libargs=-d /dev/ttyACM0 \
