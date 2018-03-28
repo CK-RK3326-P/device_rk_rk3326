@@ -29,4 +29,5 @@ PRODUCT_MANUFACTURER := rockchip
 #
 ## add Rockchip properties
 #
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=180
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=180 \
+			      ro.lmk.downgrade_pressure=70
