@@ -10,7 +10,7 @@
 
 /devices/platform/*usb*   auto vfat defaults      voldmanaged=usb:auto
 
-/dev/block/zram0                                none                swap      defaults                                              zramsize=38%
+/dev/block/zram0                                none                swap      defaults                                              zramsize=50%
 # For sdmmc
 /devices/platform/ff370000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 #  Full disk encryption has less effect on rk3326, so default to enable this.
