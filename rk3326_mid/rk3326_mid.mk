@@ -25,9 +25,10 @@ PRODUCT_DEVICE := rk3326_mid
 PRODUCT_BRAND := rockchip
 PRODUCT_MODEL := rk3326_mid
 PRODUCT_MANUFACTURER := rockchip
+ODUCT_AAPT_PREF_CONFIG := mdpi
 
 #
 ## add Rockchip properties
 #
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=180 \
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=160 \
 			      ro.lmk.downgrade_pressure=70
