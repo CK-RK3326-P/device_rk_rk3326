@@ -13,8 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-PRODUCT_MAKEFILES := \
-        $(LOCAL_DIR)/rk3326_evb/rk3326_evb.mk \
-        $(LOCAL_DIR)/rk3326_mid/rk3326_mid.mk \
-        $(LOCAL_DIR)/rk3326_m2g/rk3326_m2g.mk
+include device/rockchip/rk3326/BoardConfig.mk
+BUILD_WITH_GO_OPT := false
