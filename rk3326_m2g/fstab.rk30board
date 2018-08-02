@@ -4,8 +4,7 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 /dev/block/platform/ff390000.dwmmc/by-name/oem            /oem                ext4      ro,noatime,nodiratime,noauto_da_alloc                                  wait,check
-/dev/block/platform/ff390000.dwmmc/by-name/cache          /cache              ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard                wait,check
-/dev/block/platform/ff390000.dwmmc/by-name/metadata       /metadata           ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard                wait
+/dev/block/platform/ff390000.dwmmc/by-name/metadata       /mnt/vendor/metadata           ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard                wait
 /dev/block/platform/ff390000.dwmmc/by-name/misc         /misc               emmc      defaults     defaults
 
 /devices/platform/*usb*   auto vfat defaults      voldmanaged=usb:auto
@@ -14,4 +13,4 @@
 # For sdmmc
 /devices/platform/ff370000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 #  Full disk encryption has less effect on rk3326, so default to enable this.
-/dev/block/platform/ff390000.dwmmc/by-name/userdata       /data               f2fs      noatime,nodiratime,nosuid,nodev,discard,inline_xattr                   wait,check,notrim,encryptable=/metadata/key_file
+/dev/block/platform/ff390000.dwmmc/by-name/userdata       /data               f2fs      noatime,nodiratime,nosuid,nodev,discard,inline_xattr                   wait,check,notrim,encryptable=/mnt/vendor/metadata/key_file
