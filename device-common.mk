@@ -35,8 +35,8 @@ ifeq ($(HOST_OS),linux)
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.rk3326.rc:root/init.rk3326.rc \
-    $(LOCAL_PATH)/init.rk30board.usb.rc:root/init.rk30board.usb.rc \
+    $(LOCAL_PATH)/init.rk3326.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rk3326.rc \
+    $(LOCAL_PATH)/init.rk30board.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.rk30board.usb.rc \
     $(LOCAL_PATH)/wake_lock_filter.xml:system/etc/wake_lock_filter.xml \
     device/rockchip/rk3326/package_performance.xml:$(TARGET_COPY_OUT_OEM)/etc/package_performance.xml \
     $(TARGET_DEVICE_DIR)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml\
@@ -49,7 +49,7 @@ $(call inherit-product-if-exists, vendor/rockchip/rk3326/device-vendor.mk)
 # for enable optee support
 ifeq ($(strip $(PRODUCT_HAVE_OPTEE)),true)
 PRODUCT_COPY_FILES += \
-       device/rockchip/common/init.optee_verify.rc:root/init.optee.rc
+       device/rockchip/common/init.optee_verify.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.optee.rc
 endif
 
 # Reduces GC frequency of foreground apps by 50%
