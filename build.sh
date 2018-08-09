@@ -114,7 +114,7 @@ if [ "$BUILD_OTA" = true ] ; then
     cp $OUT/$INTERNAL_OTA_PACKAGE_OBJ_TARGET $IMAGE_PATH/
 fi
 
-
+if [ "$BUILD_UPDATE_IMG" = true ] ; then
 mkdir -p $PACK_TOOL_DIR/rockdev/Image/
 cp -f $IMAGE_PATH/* $PACK_TOOL_DIR/rockdev/Image/
 
@@ -130,12 +130,13 @@ cd -
 
 mv $PACK_TOOL_DIR/rockdev/update.img $IMAGE_PATH/
 rm $PACK_TOOL_DIR/rockdev/Image -rf
+fi
 
 mkdir -p $STUB_PATH
 
 #Generate patches
 
-.repo/repo/repo forall  -c '[ "$REPO_REMOTE" = "rk" ] && { REMOTE_DIFF=`git log $REPO_REMOTE/$REPO_RREV..HEAD`; LOCAL_DIFF=`git diff`; [ -n "$REMOTE_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git format-patch $REPO_REMOTE/$REPO_RREV..HEAD -o $STUB_PATCH_PATH/$REPO_PATH; git merge-base HEAD $REPO_REMOTE/$REPO_RREV | xargs git show -s > $STUB_PATCH_PATH/$REPO_PATH/git-merge-base.txt; } || :; [ -n "$LOCAL_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git reset HEAD ./; git diff > $STUB_PATCH_PATH/$REPO_PATH/local_diff.patch; } || :; }'
+.repo/repo/repo forall  -c "$PROJECT_TOP/device/rockchip/common/gen_patches_body.sh"
 
 #Copy stubs
 cp commit_id.xml $STUB_PATH/manifest_${DATE}.xml
