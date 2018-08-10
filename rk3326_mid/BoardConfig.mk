@@ -14,3 +14,6 @@
 # limitations under the License.
 #
 include device/rockchip/rk3326/BoardConfig.mk
+
+PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
