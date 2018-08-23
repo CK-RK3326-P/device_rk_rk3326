@@ -15,3 +15,4 @@
 /devices/platform/ff370000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 #  Full disk encryption has less effect on rk3326, so default to enable this.
 /dev/block/by-name/userdata       /data               f2fs      noatime,nodiratime,nosuid,nodev,discard,inline_xattr                   wait,check,notrim,encryptable=/mnt/vendor/metadata/key_file
+/dev/block/by-name/cache          /cache              ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard                wait,check
