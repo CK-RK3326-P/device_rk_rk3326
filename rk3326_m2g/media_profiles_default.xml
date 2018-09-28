@@ -89,7 +89,7 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
 
-		<!--
+
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="256000"
@@ -104,7 +104,6 @@
 
         </EncoderProfile>
 
-		-->
         <EncoderProfile quality="qvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -213,7 +212,7 @@
  -->
         <!--  If your sensor driver don't support 1080p stream, Please turn off this element -->
 
-		<!--
+
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -226,7 +225,7 @@
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-        -->
+
         <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -362,7 +361,7 @@
 
     <CamcorderProfiles cameraId="1">
 
-		<!--
+
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="256000"
@@ -376,7 +375,7 @@
                    channels="1" />
 
         </EncoderProfile>
-        -->
+
          <EncoderProfile quality="qvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -483,7 +482,7 @@
                    channels="1" />
         </EncoderProfile>
 -->
-		  <!--
+
           <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
@@ -496,7 +495,7 @@
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-        -->
+
         <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"

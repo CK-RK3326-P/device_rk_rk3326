@@ -89,7 +89,7 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
 
-		<!--
+
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="256000"
@@ -103,8 +103,7 @@
                    channels="1" />
 
         </EncoderProfile>
-        
-		-->
+
         <EncoderProfile quality="qvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -115,8 +114,8 @@
                    bitRate="12200"
                    sampleRate="8000"
                    channels="1" />
-        </EncoderProfile> 
-        
+        </EncoderProfile>
+
         <!--
          <EncoderProfile quality="cif" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -128,10 +127,10 @@
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile>   
-        --> 
+        </EncoderProfile>
+        -->
         <!--  If your sensor driver don't support 720p and 480p stream, Please fill this element according as
-              your sensor max resolution for preview(Not Capture resolution)  -->                  
+              your sensor max resolution for preview(Not Capture resolution)  -->
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="256000"
@@ -144,9 +143,9 @@
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-        
+
         <!--  If your sensor driver don't support 480p stream, Please turn off this element -->
-          
+
 		<!--
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -163,7 +162,7 @@
 
 		-->
         <!--  If your sensor driver don't support 480p stream, Please turn off this element -->
-          
+
 <!--
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -210,23 +209,23 @@
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
- -->       
+ -->
         <!--  If your sensor driver don't support 1080p stream, Please turn off this element -->
-       
-		<!--
+
+
         <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
                    width="176"
                    height="144"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-        --> 
+
         <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -245,31 +244,31 @@
                    width="352"
                    height="288"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile>  
-              
+        </EncoderProfile>
+
 		-->
         <!--  If your sensor driver don't support 720p and 480p stream, Please fill this element according as
-              your sensor max resolution for preview(Not Capture resolution)  --> 
+              your sensor max resolution for preview(Not Capture resolution)  -->
         <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="1200000"
                    width="640"
                    height="480"
                    frameRate="30" />
-            
+
        			<Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
-                   channels="1" />	
-        </EncoderProfile> 
-        
-        <!--  If your sensor driver don't support 480p stream, Please turn off this element  -->  
-          
+                   channels="1" />
+        </EncoderProfile>
+
+        <!--  If your sensor driver don't support 480p stream, Please turn off this element  -->
+
 		<!--
         <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -285,8 +284,8 @@
         </EncoderProfile>
 
 		-->
-        <!--  If your sensor driver don't support 480p stream, Please turn off this element  -->  
-          
+        <!--  If your sensor driver don't support 480p stream, Please turn off this element  -->
+
 <!--
         <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -301,7 +300,6 @@
                    channels="1" />
         </EncoderProfile>
 -->
-
 
          <!--  If your sensor driver don't support 720p and 480p stream, Please fill this element according as
               your sensor max resolution for preview(Not Capture resolution)  -->
@@ -329,16 +327,16 @@
                    width="720"
                    height="576"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
-                   channels="1" />	
-        </EncoderProfile> 
+                   channels="1" />
+        </EncoderProfile>
 -->
 
         <!--  If your sensor driver don't support 720p stream, Please turn off this element -->
-<!-- 
+<!--
         <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="3000000"
@@ -363,7 +361,7 @@
 
     <CamcorderProfiles cameraId="1">
 
-		<!--
+
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="256000"
@@ -377,7 +375,7 @@
                    channels="1" />
 
         </EncoderProfile>
-        --> 
+
          <EncoderProfile quality="qvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -388,8 +386,8 @@
                    bitRate="12200"
                    sampleRate="8000"
                    channels="1" />
-        </EncoderProfile> 
-        
+        </EncoderProfile>
+
 		<!--
          <EncoderProfile quality="cif" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -401,10 +399,10 @@
                    bitRate="96000"
                    sampleRate="48000"
                    channels="1" />
-        </EncoderProfile> 
-        --> 
+        </EncoderProfile>
+        -->
         <!--  If your sensor driver don't support 720p and 480p stream, Please fill this element according as
-              your sensor max resolution for preview(Not Capture resolution)  --> 
+              your sensor max resolution for preview(Not Capture resolution)  -->
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="256000"
@@ -416,10 +414,10 @@
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile>  
-              
-        <!--  If your sensor driver don't support 480p stream, Please turn on this element   -->   
-       
+        </EncoderProfile>
+
+        <!--  If your sensor driver don't support 480p stream, Please turn on this element   -->
+
 <!--
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -434,9 +432,9 @@
                    channels="1" />
         </EncoderProfile>
 -->
-   	
+
 	<!--  If your sensor driver don't support 480p stream, Please turn off this element -->
-          
+
 <!--
         <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -451,7 +449,7 @@
                    channels="1" />
         </EncoderProfile>
 -->
-	
+
         <!--  If your sensor driver don't support 720p stream, Please turn off this element -->
 
 <!--
@@ -484,20 +482,20 @@
                    channels="1" />
         </EncoderProfile>
 -->
-		  <!--
+
           <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="192000"
                    width="176"
                    height="144"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-        --> 
+
         <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="128000"
@@ -517,30 +515,29 @@
                    width="352"
                    height="288"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile>   
-        --> 
+        </EncoderProfile>
+        -->
         <!--  If your sensor driver don't support 720p and 480p stream, Please fill this element according as
-              your sensor max resolution for preview(Not Capture resolution)  --> 
+              your sensor max resolution for preview(Not Capture resolution)  -->
         <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="1200000"
                    width="640"
                    height="480"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
         </EncoderProfile>
-        
-        
-        <!--  If your sensor driver don't support 480p stream, Please turn on this element  -->  
+
+        <!--  If your sensor driver don't support 480p stream, Please turn on this element  -->
 
 <!--
          <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
@@ -554,11 +551,11 @@
                    bitRate="61000"
                    sampleRate="44100"
                    channels="1" />
-        </EncoderProfile> 
+        </EncoderProfile>
 -->
-	
+
 	<!--  If your sensor driver don't support 720p and 480p stream, Please fill this element according as
-              your sensor max resolution for preview(Not Capture resolution)  --> 
+              your sensor max resolution for preview(Not Capture resolution)  -->
 <!--
          <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
@@ -566,14 +563,14 @@
                    width="800"
                    height="600"
                    frameRate="30" />
-            
+
             <Audio codec="aac"
                    bitRate="61000"
                    sampleRate="44100"
-                   channels="1" />	
-        </EncoderProfile> 
+                   channels="1" />
+        </EncoderProfile>
 -->
-	
+
         <!--  If your sensor driver don't support 720p stream, Please turn off this element -->
 
 <!--
@@ -610,7 +607,6 @@
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
         <ImageDecoding memCap="20000000" />
-
 
     </CamcorderProfiles>
 
