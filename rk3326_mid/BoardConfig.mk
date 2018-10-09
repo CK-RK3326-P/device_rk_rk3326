@@ -15,5 +15,15 @@
 #
 include device/rockchip/rk3326/BoardConfig.mk
 
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_SMP := true
+
+# Config GO Optimization
+BUILD_WITH_GO_OPT := true
+
 PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
