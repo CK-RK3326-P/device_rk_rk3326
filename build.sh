@@ -66,7 +66,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 # source environment and chose target product
 DEVICE=`get_build_var TARGET_PRODUCT`
-BUILD_VARIANT=`get_build_var TARGET_BUILD_VARIANT`
 UBOOT_DEFCONFIG=rk3326
 KERNEL_DEFCONFIG=rockchip_defconfig
 KERNEL_DTS=rk3326-863-lp3-v10-avb
