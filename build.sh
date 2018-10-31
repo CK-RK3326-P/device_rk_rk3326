@@ -74,11 +74,11 @@ PACK_TOOL_DIR=RKTools/linux/Linux_Pack_Firmware
 IMAGE_PATH=rockdev/Image-$TARGET_PRODUCT
 export PROJECT_TOP=`gettop`
 
-#lunch $DEVICE-$BUILD_VARIANT
+lunch $DEVICE-$BUILD_VARIANT
 
 PLATFORM_VERSION=`get_build_var PLATFORM_VERSION`
 DATE=$(date  +%Y%m%d.%H%M)
-STUB_PATH=Image/"$KERNEL_DTS"_"$PLATFORM_VERSION"_"$DATE"_RELEASE_TEST
+STUB_PATH=Image/"$DEVICE"_"$PLATFORM_VERSION"_"$BUILD_VARIANT"_"$DATE"_RELEASE_TEST
 STUB_PATH="$(echo $STUB_PATH | tr '[:lower:]' '[:upper:]')"
 export STUB_PATH=$PROJECT_TOP/$STUB_PATH
 export STUB_PATCH_PATH=$STUB_PATH/PATCHES
@@ -178,7 +178,7 @@ mkdir -p $STUB_PATH/IMAGES/
 cp $IMAGE_PATH/* $STUB_PATH/IMAGES/
 cp build.sh $STUB_PATH/build.sh
 #Save build command info
-echo "UBOOT:  defconfig: $UBOOT_DEFCONFIG" >> $STUB_PATH/build_cmd_info
-echo "KERNEL: defconfig: $KERNEL_DEFCONFIG, dts: $KERNEL_DTS" >> $STUB_PATH/build_cmd_info
-echo "ANDROID:$DEVICE-$BUILD_VARIANT" >> $STUB_PATH/build_cmd_info
+echo "UBOOT:  defconfig: $UBOOT_DEFCONFIG" >> $STUB_PATH/build_cmd_info.txt
+echo "KERNEL: defconfig: $KERNEL_DEFCONFIG, dts: $KERNEL_DTS" >> $STUB_PATH/build_cmd_info.txt
+echo "ANDROID:$DEVICE-$BUILD_VARIANT" >> $STUB_PATH/build_cmd_info.txt
 fi
