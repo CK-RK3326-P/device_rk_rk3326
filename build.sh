@@ -18,6 +18,7 @@ BUILD_ANDROID=false
 BUILD_UPDATE_IMG=false
 BUILD_OTA=false
 BUILD_PACKING=false
+BUILD_VARIANT=userdebug
 
 
 # check pass argument
@@ -66,6 +67,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 # source environment and chose target product
 DEVICE=`get_build_var TARGET_PRODUCT`
+BUILD_NUMBER=`get_build_var BUILD_NUMBER`
+BUILD_ID=`get_build_var BUILD_ID`
 UBOOT_DEFCONFIG=rk3326
 KERNEL_DEFCONFIG=rockchip_defconfig
 KERNEL_DTS=rk3326-863-lp3-v10-avb
@@ -180,4 +183,5 @@ cp build.sh $STUB_PATH/build.sh
 echo "UBOOT:  defconfig: $UBOOT_DEFCONFIG" >> $STUB_PATH/build_cmd_info.txt
 echo "KERNEL: defconfig: $KERNEL_DEFCONFIG, dts: $KERNEL_DTS" >> $STUB_PATH/build_cmd_info.txt
 echo "ANDROID:$DEVICE-$BUILD_VARIANT" >> $STUB_PATH/build_cmd_info.txt
+echo "FINGER:$BUILD_ID/$BUILD_NUMBER/$BUILD_VARIANT" >> $STUB_PATH/build_cmd_info.txt
 fi
