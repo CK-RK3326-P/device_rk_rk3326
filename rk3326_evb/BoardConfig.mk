@@ -14,3 +14,6 @@
 # limitations under the License.
 #
 include device/rockchip/rk3326/BoardConfig.mk
+
+PRODUCT_KERNEL_DTS := rk3326-evb-lp3-v10
+

@@ -15,3 +15,6 @@
 #
 include device/rockchip/rk3326/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
+
+PRODUCT_KERNEL_DTS := rk3326-863-lp3-v10-avb
+

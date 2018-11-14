@@ -34,6 +34,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a7
 TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
 PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3326/overlay
 
+PRODUCT_KERNEL_DTS ?= rk3326-863-lp3-v10-avb
+
 BOARD_AVB_ENABLE := true
 
 # [TEMP] Waiting for emmc for 1s.

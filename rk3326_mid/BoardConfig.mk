@@ -17,3 +17,6 @@ include device/rockchip/rk3326/BoardConfig.mk
 
 PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+
+PRODUCT_KERNEL_DTS := rk3326-863-lp3-v10-avb
+
