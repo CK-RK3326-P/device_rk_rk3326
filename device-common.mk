@@ -61,7 +61,8 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.version = 1.0.0 \
-    ro.product.ota.host = www.rockchip.com:2300
+    ro.product.ota.host = www.rockchip.com:2300 \
+    ro.vendor.sdkversion = $(CURRENT_SDK_VERSION)
 
 #
 ## setup boot-shutdown animation configs.

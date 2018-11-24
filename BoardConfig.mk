@@ -18,6 +18,8 @@
 -include vendor/rockchip/rk3326/BoardConfigVendor.mk
 -include device/rockchip/common/BoardConfig.mk
 
+CURRENT_SDK_VERSION := RK3326_ANDROID9.0_MID_V1.0
+
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -36,7 +38,7 @@ PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3326/overlay
 
 PRODUCT_KERNEL_DTS ?= rk3326-863-lp3-v10-avb
 
-BOARD_AVB_ENABLE := true
+#BOARD_AVB_ENABLE := true
 
 # [TEMP] Waiting for emmc for 1s.
 BOARD_KERNEL_CMDLINE += rootdelay=1
