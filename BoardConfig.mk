@@ -18,7 +18,7 @@
 -include vendor/rockchip/rk3326/BoardConfigVendor.mk
 -include device/rockchip/common/BoardConfig.mk
 
-CURRENT_SDK_VERSION := RK3326_ANDROID9.0_MID_V1.0
+CURRENT_SDK_VERSION := RK3326_ANDROID9.0_MID_V1.1
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
