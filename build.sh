@@ -69,6 +69,7 @@ export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 DEVICE=`get_build_var TARGET_PRODUCT`
 BUILD_NUMBER=`get_build_var BUILD_NUMBER`
 BUILD_ID=`get_build_var BUILD_ID`
+CURRENT_SDK_VERSION=`get_build_var CURRENT_SDK_VERSION`
 UBOOT_DEFCONFIG=rk3326
 KERNEL_DEFCONFIG=rockchip_defconfig
 KERNEL_DTS=`get_build_var PRODUCT_KERNEL_DTS`
@@ -80,7 +81,7 @@ lunch $DEVICE-$BUILD_VARIANT
 
 PLATFORM_VERSION=`get_build_var PLATFORM_VERSION`
 DATE=$(date  +%Y%m%d.%H%M)
-STUB_PATH=Image/"$DEVICE"_"$PLATFORM_VERSION"_"$BUILD_VARIANT"_"$DATE"_RELEASE_TEST
+STUB_PATH=Image/"$CURRENT_SDK_VERSION"_"$BUILD_VARIANT"_"$DATE"
 STUB_PATH="$(echo $STUB_PATH | tr '[:lower:]' '[:upper:]')"
 export STUB_PATH=$PROJECT_TOP/$STUB_PATH
 export STUB_PATCH_PATH=$STUB_PATH/PATCHES
@@ -183,8 +184,9 @@ mkdir -p $STUB_PATH/IMAGES/
 cp $IMAGE_PATH/* $STUB_PATH/IMAGES/
 cp build.sh $STUB_PATH/build.sh
 #Save build command info
-echo "UBOOT:  defconfig: $UBOOT_DEFCONFIG" >> $STUB_PATH/build_cmd_info.txt
-echo "KERNEL: defconfig: $KERNEL_DEFCONFIG, dts: $KERNEL_DTS" >> $STUB_PATH/build_cmd_info.txt
-echo "ANDROID:$DEVICE-$BUILD_VARIANT" >> $STUB_PATH/build_cmd_info.txt
-echo "FINGER:$BUILD_ID/$BUILD_NUMBER/$BUILD_VARIANT" >> $STUB_PATH/build_cmd_info.txt
+echo "UBOOT:  defconfig: $UBOOT_DEFCONFIG"                      >> $STUB_PATH/build_cmd_info.txt
+echo "KERNEL: defconfig: $KERNEL_DEFCONFIG, dts: $KERNEL_DTS"   >> $STUB_PATH/build_cmd_info.txt
+echo "ANDROID:$DEVICE-$BUILD_VARIANT"                           >> $STUB_PATH/build_cmd_info.txt
+echo "VERSION:$CURRENT_SDK_VERSION"                             >> $STUB_PATH/build_cmd_info.txt
+echo "FINGER: $BUILD_ID/$BUILD_NUMBER/$BUILD_VARIANT"           >> $STUB_PATH/build_cmd_info.txt
 fi
