@@ -69,7 +69,9 @@ export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 DEVICE=`get_build_var TARGET_PRODUCT`
 BUILD_NUMBER=`get_build_var BUILD_NUMBER`
 BUILD_ID=`get_build_var BUILD_ID`
+# only save the version code
 CURRENT_SDK_VERSION=`get_build_var CURRENT_SDK_VERSION`
+SDK_VERSION=`get_build_var CURRENT_SDK_VERSION| cut -b 23-`
 UBOOT_DEFCONFIG=rk3326
 KERNEL_DEFCONFIG=rockchip_defconfig
 KERNEL_DTS=`get_build_var PRODUCT_KERNEL_DTS`
@@ -81,7 +83,7 @@ lunch $DEVICE-$BUILD_VARIANT
 
 PLATFORM_VERSION=`get_build_var PLATFORM_VERSION`
 DATE=$(date  +%Y%m%d.%H%M)
-STUB_PATH=Image/"$CURRENT_SDK_VERSION"_"$BUILD_VARIANT"_"$DATE"
+STUB_PATH=Image/"$DEVICE"_"$PLATFORM_VERSION"_"$SDK_VERSION"_"$BUILD_VARIANT"_"$DATE"
 STUB_PATH="$(echo $STUB_PATH | tr '[:lower:]' '[:upper:]')"
 export STUB_PATH=$PROJECT_TOP/$STUB_PATH
 export STUB_PATCH_PATH=$STUB_PATH/PATCHES
