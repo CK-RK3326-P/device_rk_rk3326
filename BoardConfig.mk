@@ -70,6 +70,12 @@ TARGET_BOARD_PLATFORM_PRODUCT ?= tablet
 endif
 endif
 
+ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
+    DEVICE_MANIFEST_FILE := device/rockchip/rk3326/manifest_ab.xml
+else
+    DEVICE_MANIFEST_FILE := device/rockchip/rk3326/manifest.xml
+endif
+
 ENABLE_CPUSETS := true
 
 # Enable Dex compile opt as default
