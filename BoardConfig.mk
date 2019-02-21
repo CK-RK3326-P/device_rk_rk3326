@@ -18,7 +18,7 @@
 -include vendor/rockchip/rk3326/BoardConfigVendor.mk
 -include device/rockchip/common/BoardConfig.mk
 
-CURRENT_SDK_VERSION := RK3326_ANDROID9.0_MID_V1.2
+CURRENT_SDK_VERSION := RK3326_ANDROID9.0_MID_V1.3
 
 TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
 PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk3326/overlay
