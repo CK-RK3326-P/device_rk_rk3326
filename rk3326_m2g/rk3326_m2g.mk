@@ -27,7 +27,7 @@ PRODUCT_DEVICE := rk3326_m2g
 PRODUCT_BRAND := rockchip
 PRODUCT_MODEL := rk3326_m2g
 PRODUCT_MANUFACTURER := rockchip
-PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_AAPT_PREF_CONFIG := tvdpi
 #
 ## add Rockchip properties
 #
