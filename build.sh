@@ -113,7 +113,7 @@ fi
 fi
 
 echo "package resoure.img with charger images"
-cd u-boot && ./pack_resource.sh ../kernel/resource.img && cp resource.img ../kernel/resource.img && cd -
+cd u-boot && ./scripts/pack_resource.sh ../kernel/resource.img && cp resource.img ../kernel/resource.img && cd -
 
 # build android
 if [ "$BUILD_ANDROID" = true ] ; then
