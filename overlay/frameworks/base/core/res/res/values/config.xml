@@ -150,10 +150,10 @@
         <item>"/system/lib64/libhidltransport.so"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/arm64/boot-conscrypt.oat"</item>
-        <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
-        <item>"/system/framework/arm64/boot-ext.vdex"</item>
-        <item>"/system/framework/arm64/boot.vdex"</item>
-        <item>"/system/framework/arm64/boot-framework.vdex"</item>
+        <item>"/system/framework/boot-core-libart.vdex"</item>
+        <item>"/system/framework/boot-ext.vdex"</item>
+        <item>"/system/framework/boot.vdex"</item>
+        <item>"/system/framework/boot-framework.vdex"</item>
     </string-array>
 </resources>
 
