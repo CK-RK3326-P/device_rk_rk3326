@@ -15,6 +15,8 @@
 #
 add_lunch_combo rk3326_evb-userdebug
 add_lunch_combo rk3326_evb-user
+add_lunch_combo rk3326_go-userdebug
+add_lunch_combo rk3326_go-user
 add_lunch_combo rk3326_mid-userdebug
 add_lunch_combo rk3326_mid-user
 add_lunch_combo rk3326_m2g-userdebug

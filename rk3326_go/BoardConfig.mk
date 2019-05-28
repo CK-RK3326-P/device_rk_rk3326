@@ -13,10 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include device/rockchip/rk3326/BoardConfig.mk
 
-PRODUCT_MAKEFILES := \
-        $(LOCAL_DIR)/rk3326_evb/rk3326_evb.mk \
-        $(LOCAL_DIR)/rk3326_mid/rk3326_mid.mk \
-        $(LOCAL_DIR)/rk3326_m2g/rk3326_m2g.mk \
-        $(LOCAL_DIR)/rk3326_32bit/rk3326_32bit.mk \
-        $(LOCAL_DIR)/rk3326_go/rk3326_go.mk
+TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
+
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_SMP := true
+
+# Config GO Optimization
+BUILD_WITH_GO_OPT := true
+
+PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+
+PRODUCT_KERNEL_DTS := rk3326-863-lp3-v10-avb
+
