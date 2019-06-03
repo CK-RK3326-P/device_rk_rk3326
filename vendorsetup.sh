@@ -21,5 +21,7 @@ add_lunch_combo rk3326_mid-userdebug
 add_lunch_combo rk3326_mid-user
 add_lunch_combo rk3326_m2g-userdebug
 add_lunch_combo rk3326_m2g-user
+add_lunch_combo rk3326_pie-userdebug
+add_lunch_combo rk3326_pie-user
 add_lunch_combo rk3326_32bit-userdebug
 add_lunch_combo rk3326_32bit-user
