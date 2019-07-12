@@ -19,5 +19,5 @@ PRODUCT_MAKEFILES := \
         $(LOCAL_DIR)/rk3326_mid/rk3326_mid.mk \
         $(LOCAL_DIR)/rk3326_m2g/rk3326_m2g.mk \
         $(LOCAL_DIR)/rk3326_pie/rk3326_pie.mk \
-        $(LOCAL_DIR)/rk3326_32bit/rk3326_32bit.mk \
+        $(LOCAL_DIR)/rk3326_industry/rk3326_industry.mk \
         $(LOCAL_DIR)/rk3326_go/rk3326_go.mk
