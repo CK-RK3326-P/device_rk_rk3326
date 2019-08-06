@@ -30,5 +30,8 @@ on init
     # Load persistent dm-verity state
     verity_load_state
 
-    chown root root /sys/class/devfreq/dmc/system_status
+    chown system system /sys/system_monitor/system_status
+    chmod 0666 /sys/system_monitor/system_status
+
+    chown system system /sys/class/devfreq/dmc/system_status
     chmod 0666 /sys/class/devfreq/dmc/system_status
