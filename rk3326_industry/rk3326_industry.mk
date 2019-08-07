@@ -14,16 +14,16 @@
 # limitations under the License.
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-include device/rockchip/rk3326/rk3326_32bit/BoardConfig.mk
+include device/rockchip/rk3326/rk3326_industry/BoardConfig.mk
 $(call inherit-product, device/rockchip/rk3326/device-common.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
-PRODUCT_NAME := rk3326_32bit
-PRODUCT_DEVICE := rk3326_32bit
+PRODUCT_NAME := rk3326_industry
+PRODUCT_DEVICE := rk3326_industry
 PRODUCT_BRAND := rockchip
-PRODUCT_MODEL := rk3326_32bit
+PRODUCT_MODEL := industry
 PRODUCT_MANUFACTURER := rockchip
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
