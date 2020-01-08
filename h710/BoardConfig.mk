@@ -1,5 +1,5 @@
 #
-# Copyright 2014 The Android Open Source Project
+# Copyright 2014 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,17 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-add_lunch_combo rk3326_evb-userdebug
-add_lunch_combo rk3326_evb-user
-add_lunch_combo rk3326_go-userdebug
-add_lunch_combo rk3326_go-user
-add_lunch_combo rk3326_mid-userdebug
-add_lunch_combo rk3326_mid-user
-add_lunch_combo rk3326_m2g-userdebug
-add_lunch_combo rk3326_m2g-user
-add_lunch_combo rk3326_pie-userdebug
-add_lunch_combo rk3326_pie-user
-add_lunch_combo rk3326_industry-userdebug
-add_lunch_combo rk3326_industry-user
-add_lunch_combo h710-userdebug
-add_lunch_combo h710-user
+include device/rockchip/rk3326/BoardConfig.mk
+
+TARGET_PREBUILT_KERNEL := kernel/arch/arm64/boot/Image
+
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_SMP := true
+
+# Config GO Optimization
+BUILD_WITH_GO_OPT := true
+
+PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
+
+PRODUCT_KERNEL_DTS := rk3326-h710-avb
+
