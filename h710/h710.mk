@@ -32,3 +32,13 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 #
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=160 \
 			      ro.lmk.downgrade_pressure=70
+
+PRODUCT_COPY_FILES += device/rockchip/rk3326/h710/aispeech/etc/audio_policy_configuration.xml:vendor/etc/audio_policy_configuration.xml \
+		      device/rockchip/rk3326/h710/aispeech/etc/aispeech_agc_near.bin:vendor/etc/aispeech_agc_near.bin \
+		      device/rockchip/rk3326/h710/aispeech/etc/AEC_ch6-2-ch4_1ref.bin:vendor/etc/AEC_ch6-2-ch4_1ref.bin \
+		      device/rockchip/rk3326/h710/aispeech/etc/aispeech_audio_policy_configuration.xml:vendor/etc/aispeech_audio_policy_configuration.xml \
+		      device/rockchip/rk3326/h710/aispeech/etc/aispeech_audio_device.xml:vendor/etc/aispeech_audio_device.xml \
+		      device/rockchip/rk3326/h710/aispeech/audio.stub.default.so.32:vendor/lib/hw/audio.stub.default.so \
+		      device/rockchip/rk3326/h710/aispeech/audio.stub.default.so.64:vendor/lib64/hw/audio.stub.default.so
+
+PRODUCT_COPY_FILES += device/rockchip/rk3326/h710/bootanimation.zip:system/media/bootanimation.zip

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<mixercontrol>
+    <versioncontrol value="1.00">
+    </versioncontrol> 
+    <!--mic setting--> 
+    <path name="builtin_Mic" value="turnon">
+        <kctl name="Capture MIC Path" value="1" />
+    </path>
+    <path name="builtin_Mic" value="turnoff">
+        <kctl name="Capture MIC Path" value="0" /> 
+    </path>
+</mixercontrol>
